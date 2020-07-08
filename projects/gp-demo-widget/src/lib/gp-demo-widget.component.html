@@ -1,0 +1,21 @@
+<h1 class="heading-title">Inventory Data</h1>
+
+<!-- Displays the Device Details-->
+<div *ngIf="dataLoaded | async">
+    <table class="demo-table">
+        <tr>
+            <td class="demo-td-key">Device ID :</td>
+            <td class="demo-td-value">{{data.id}}</td>
+        </tr>
+        <tr>
+            <td class="demo-td-key">Device Name :</td>
+            <td class="demo-td-value">{{data.name}}</td>
+        </tr>
+        <tr>
+            <td class="demo-td-key">Creation Time :</td>
+            <td class="demo-td-value">{{data.creationTime}}</td>
+        </tr>
+    </table>
+</div>
+
+
