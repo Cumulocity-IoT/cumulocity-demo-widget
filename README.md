@@ -13,9 +13,8 @@ Execute below commands to setup New Angular Library Project for widget developem
         ng new Project-Name
        
   2. Create Library project for our widget (All Global Presales project should start with 'gp' as prefix. example: gp-demo-widget).
-       ``cmd
+       ```cmd
         cd Project-Name
-        
         ng generate library gp-demo-widget
         ```
        
