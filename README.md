@@ -15,7 +15,7 @@ Execute below commands to setup New Angular Library Project for widget developem
   2. Create Library project for our widget (All Global Presales project should start with 'gp' as prefix. example: gp-demo-widget).
        
         cd Project-Name
-        ng generate gp-demo-widget
+        ng generate library gp-demo-widget
        
   3. Install Cumulocity Libraries(Mandatory for widget development)
        ```cmd
