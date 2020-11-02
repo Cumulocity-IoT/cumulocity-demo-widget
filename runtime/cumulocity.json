@@ -1,0 +1,12 @@
+{
+  "name": "Demo Runtime Widget",
+  "contextPath": "demo-runtime-widget",
+  "key": "demo-runtime-widget-application-key",
+  "contentSecurityPolicy": "default-src 'self'",
+  "icon": {
+    "class": "fa fa-delicious"
+  },
+  "manifest": {
+    "noAppSwitcher": true
+  }
+}
