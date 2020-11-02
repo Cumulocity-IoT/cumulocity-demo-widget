@@ -142,7 +142,7 @@ Note: We need to initialize provider for each service and also import necessary 
 ## Local development server
 Run `npm run serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Want runtime widget deployment? (Optional)
+## Want to create runtime loading widget? (Optional)
 
 
 #### Follow the below steps to convert library widget into runtime 
@@ -188,7 +188,7 @@ Important: Leave the -CustomWidget on the interleave option, and don't edit the 
 
 6. After the build completes the /dist folder will contain a zip file, this is your deployable widget
 
-7. Follow runtime deployment instruction from [here](https://github.com/SoftwareAG/cumulocity-runtime-widget-loader)
+7. Follow runtime deployment instruction from [here](https://github.com/SoftwareAG/cumulocity-runtime-widget-loader). Download the Demo Runtime Widget [from here](https://github.com/SoftwareAG/cumulocity-demo-widget/releases/download/1.1.0/demo-runtime-widget-1.0.0.zip)
 
 
 ## Installation
