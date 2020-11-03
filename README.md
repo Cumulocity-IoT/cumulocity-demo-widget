@@ -28,9 +28,13 @@ Execute below commands to setup New Angular Library Project for widget developem
   4. Add below script command in Project-Name/package.json file in script section to create shortcut for build and serve(Optional).
 
         "buildPatch": "cd projects/Library-Name && npm version patch && ng build Library-Name && cd ../../dist/Library-Name && npm pack && move *.tgz ../",
+
         "buildMinor": "cd projects/Library-Name && npm version minor && ng build Library-Name && cd ../../dist/Library-Name && npm pack && move *.tgz ../",
+
         "buildMajor": "cd projects/Library-Name && npm version major && ng build Library-Name && cd ../../dist/Library-Name && npm pack && move *.tgz ../",
+
         "serve": "ng build Library-Name && npm i dist/Library-Name && ng s"
+        
         Note: Please replace "Library-Name" with your library name(e.g. gp-demo-widget)
 
 
