@@ -1,5 +1,7 @@
-# Angular Library for Cumulocity Project
+# Demo Widget for Cumulocity Project [<img width="35" src="https://user-images.githubusercontent.com/67993842/97668428-f360cc80-1aa7-11eb-8801-da578bda4334.png"/>](https://github.com/SoftwareAG/cumulocity-demo-widget/releases/download/1.1.0/demo-runtime-widget-1.0.0.zip)
+
 This Demo Widget created using Anuglar Library and later deploy it in App Builder and Cockpit as cumulocity widget. It fetches Inventory data based on the device id and displays the same in a widget.
+
 ## Prerequisites:
    Angular CLI version 8.
     (for example: npm i @angular/cli@8.3.25 in your workspace or execute  npm i -g  @angular/cli@8.3.25 for global installation)
