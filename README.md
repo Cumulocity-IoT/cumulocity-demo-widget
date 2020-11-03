@@ -388,18 +388,39 @@ Important: Leave the -CustomWidget on the interleave option, and don't edit the 
   }
 }
 ```
+4. Edit the entry file in the ng-package.json file. Update the entry file path, so that it points to public-api.ts of your library project.
 
-4. Add the custom css in styles/index.css file in runtime folder.
+```
 
-5. Build the widget
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "assets": [
+    "styles/**/*"
+  ],
+  "lib": {
+    "entryFile": "../projects/gp-demo-widget/src/public-api.ts",
+    "umdModuleIds": {
+      "@c8y/ngx-components": "@c8y/ngx-components"
+    },
+    "flatModuleFile": "custom-widget"
+  },
+  "whitelistedNonPeerDependencies": ["."],
+  "dest": "dist/widget-library"
+}
+
+```
+
+5. Add the custom css in styles/index.css file in runtime folder.
+
+6. Build the widget
 
 ```cmd
   npm run runtime
 ```
 
-6. After the build completes the /dist folder will contain a zip file, this is your deployable widget
+7. After the build completes the /dist folder will contain a zip file, this is your deployable widget
 
-7. Follow runtime deployment instruction from [here](https://github.com/SoftwareAG/cumulocity-runtime-widget-loader). Download the Demo Runtime Widget [from here](https://github.com/SoftwareAG/cumulocity-demo-widget/releases/download/1.1.0/demo-runtime-widget-1.0.0.zip)
+8. Follow runtime deployment instruction from [here](https://github.com/SoftwareAG/cumulocity-runtime-widget-loader). Download the Demo Runtime Widget [from here](https://github.com/SoftwareAG/cumulocity-demo-widget/releases/download/1.1.0/demo-runtime-widget-1.0.0.zip)
 
 
 On the successful deployment of the widget, login to cumulocity tenant URL and basic login credentials
