@@ -144,54 +144,6 @@ Note: We need to initialize provider for each service and also import necessary 
 ## Local development server
 Run `npm run serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Want to create runtime loading widget? (Optional)
-
-
-#### Follow the below steps to convert library widget into runtime 
-
-1. Copy the runtime folder from this project into your angular project.
-2. Edit the name and interleave values in the package.json to include the new contextPath:
-Important: Leave the -CustomWidget on the interleave option, and don't edit the dist/bundle-src/custom-widget.js part
-
-```
-{
-  "name": "demo-runtime-widget",
-  "interleave": {
-    "dist\\bundle-src\\custom-widget.js": "demo-runtime-widget-CustomWidget",
-    "dist/bundle-src/custom-widget.js": "demo-runtime-widget-CustomWidget"
-  },
-}
-```
-
-3. Edit the contextPath and applicationKey values in the cumulocity.json file to include the contextPath (Feel free to edit the name and icon):
-
-```
-{
-  "name": "Demo Runtime Widget",
-  "contextPath": "demo-runtime-widget",
-  "key": "demo-runtime-widget-application-key",
-  "contentSecurityPolicy": "default-src 'self'",
-  "icon": {
-    "class": "fa fa-delicious"
-  },
-  "manifest": {
-    "noAppSwitcher": true
-  }
-}
-```
-
-4. Add the custom css in styles/index.css file in runtime folder.
-
-5. Build the widget
-
-```cmd
-  npm run runtime
-```
-
-6. After the build completes the /dist folder will contain a zip file, this is your deployable widget
-
-7. Follow runtime deployment instruction from [here](https://github.com/SoftwareAG/cumulocity-runtime-widget-loader). Download the Demo Runtime Widget [from here](https://github.com/SoftwareAG/cumulocity-demo-widget/releases/download/1.1.0/demo-runtime-widget-1.0.0.zip)
-
 
 ## Installation
 
@@ -396,6 +348,55 @@ Update package.json start script
 
   },
 ``` 
+
+## Want to create runtime loading widget? (Optional)
+
+
+#### Follow the below steps to convert library widget into runtime 
+
+1. Copy the runtime folder from this project into your angular project.
+2. Edit the name and interleave values in the package.json to include the new contextPath:
+Important: Leave the -CustomWidget on the interleave option, and don't edit the dist/bundle-src/custom-widget.js part
+
+```
+{
+  "name": "demo-runtime-widget",
+  "interleave": {
+    "dist\\bundle-src\\custom-widget.js": "demo-runtime-widget-CustomWidget",
+    "dist/bundle-src/custom-widget.js": "demo-runtime-widget-CustomWidget"
+  },
+}
+```
+
+3. Edit the contextPath and applicationKey values in the cumulocity.json file to include the contextPath (Feel free to edit the name and icon):
+
+```
+{
+  "name": "Demo Runtime Widget",
+  "contextPath": "demo-runtime-widget",
+  "key": "demo-runtime-widget-application-key",
+  "contentSecurityPolicy": "default-src 'self'",
+  "icon": {
+    "class": "fa fa-delicious"
+  },
+  "manifest": {
+    "noAppSwitcher": true
+  }
+}
+```
+
+4. Add the custom css in styles/index.css file in runtime folder.
+
+5. Build the widget
+
+```cmd
+  npm run runtime
+```
+
+6. After the build completes the /dist folder will contain a zip file, this is your deployable widget
+
+7. Follow runtime deployment instruction from [here](https://github.com/SoftwareAG/cumulocity-runtime-widget-loader). Download the Demo Runtime Widget [from here](https://github.com/SoftwareAG/cumulocity-demo-widget/releases/download/1.1.0/demo-runtime-widget-1.0.0.zip)
+
 
 On the successful deployment of the widget, login to cumulocity tenant URL and basic login credentials
 
