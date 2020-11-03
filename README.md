@@ -358,8 +358,31 @@ Update package.json start script
 
 #### Follow the below steps to convert library widget into runtime 
 
-1. Copy the runtime folder from this project into your angular project.
-2. Edit the name and interleave values in the package.json to include the new contextPath:
+1. Add below script command in the script section of package.json( the one in the root folder) to create shortcut for runtime.
+
+  "scripts":{
+        "runtime": "gulp --gulpfile ./runtime/gulpfile.js"
+  }
+
+2. Install the following libararies
+
+  npm i gulp-inject-string@1.1.2
+  npm i ng-packagr@9.1.1
+  npm i css-loader@3.5.3
+  npm i del@5.1.0
+  npm i delay@4.3.0
+  npm i fs-extra@9.0.0
+  npm i gulp@4.0.2
+  npm i gulp-filter@6.0.0
+  npm i gulp-replace@1.0.0
+  npm i gulp-zip@5.0.1
+  npm i url-loader@4.1.0
+  npm i webpack@4.43.0
+  npm i webpack-cli@3.3.11
+  npm i webpack-external-import@2.2.3
+
+3. Copy the runtime folder from this project into your angular project.
+4. Edit the name and interleave values in the runtime/package.json to include the new contextPath:
 Important: Leave the -CustomWidget on the interleave option, and don't edit the dist/bundle-src/custom-widget.js part
 
 ```
@@ -372,7 +395,7 @@ Important: Leave the -CustomWidget on the interleave option, and don't edit the 
 }
 ```
 
-3. Edit the contextPath and applicationKey values in the cumulocity.json file to include the contextPath (Feel free to edit the name and icon):
+5. Edit the contextPath and applicationKey values in the runtime/cumulocity.json file to include the contextPath (Feel free to edit the name and icon):
 
 ```
 {
@@ -388,7 +411,7 @@ Important: Leave the -CustomWidget on the interleave option, and don't edit the 
   }
 }
 ```
-4. Edit the entry file in the ng-package.json file. Update the entry file path, so that it points to public-api.ts of your library project.
+6. Edit the entry file in the runtime/ng-package.json file. Update the entry file path, so that it points to public-api.ts of your library project.
 
 ```
 
@@ -410,17 +433,17 @@ Important: Leave the -CustomWidget on the interleave option, and don't edit the 
 
 ```
 
-5. Add the custom css in styles/index.css file in runtime folder.
+7. Add the custom css in runtime/styles/index.css file in runtime folder.
 
-6. Build the widget
+8. Build the widget
 
 ```cmd
   npm run runtime
 ```
 
-7. After the build completes the /dist folder will contain a zip file, this is your deployable widget
+9. After the build completes the /dist folder will contain a zip file, this is your deployable widget
 
-8. Follow runtime deployment instruction from [here](https://github.com/SoftwareAG/cumulocity-runtime-widget-loader). Download the Demo Runtime Widget [from here](https://github.com/SoftwareAG/cumulocity-demo-widget/releases/download/1.1.0/demo-runtime-widget-1.0.0.zip)
+10. Follow runtime deployment instruction from [here](https://github.com/SoftwareAG/cumulocity-runtime-widget-loader). Download the Demo Runtime Widget [from here](https://github.com/SoftwareAG/cumulocity-demo-widget/releases/download/1.1.0/demo-runtime-widget-1.0.0.zip)
 
 
 On the successful deployment of the widget, login to cumulocity tenant URL and basic login credentials
