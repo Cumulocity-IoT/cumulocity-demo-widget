@@ -364,7 +364,7 @@ Update package.json start script
         "runtime": "gulp --gulpfile ./runtime/gulpfile.js"
   }
 
-2. Install the following libararies
+2. Install the following libararies(as dev dependencies)
 
   npm i gulp-inject-string@1.1.2
   npm i ng-packagr@9.1.1
