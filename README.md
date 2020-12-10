@@ -178,7 +178,7 @@ To Install the binary file in cockpit application run the following command in c
 Example:
 
 ```cmd 
-npm i C:\Users\KHKH\Documents\Global Presales\Demo Application\gp-demo-widget\dist\gp-demo-widget-1.0.0.tgz
+npm i <binary file path>\gp-demo-widget-1.0.0.tgz
  ``` 
 
 After installation see that your cockpit application has following entry in `package.json `.
@@ -278,7 +278,7 @@ To Install the binary file in App Builder, run the following command.
 Example:
 
 ```cmd 
-npm i C:\Users\KHKH\Documents\Global Presales\Demo Application\gp-demo-widget\dist\gp-demo-widget-1.0.0.tgz
+npm i <binary file path>\gp-demo-widget-1.0.0.tgz
  ``` 
 
 After installation see that your App Builder  has following entry in `package.json `.
