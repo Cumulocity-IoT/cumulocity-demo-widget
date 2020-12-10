@@ -1,4 +1,4 @@
-# Demo Widget for Cumulocity Project [<img width="35" src="https://user-images.githubusercontent.com/67993842/97668428-f360cc80-1aa7-11eb-8801-da578bda4334.png"/>](https://github.com/SoftwareAG/cumulocity-demo-widget/releases/download/1.1.0/demo-runtime-widget-1.0.0.zip)
+# Demo Widget for Cumulocity Project [<img width="35" src="https://user-images.githubusercontent.com/67993842/97668428-f360cc80-1aa7-11eb-8801-da578bda4334.png"/>](https://github.com/SoftwareAG/cumulocity-demo-widget/releases/download/1.1.0/demo-runtime-widget-1.1.0.zip)
 
 This Demo Widget created using Anuglar Library and later deploy it in App Builder and Cockpit as cumulocity widget. It fetches Inventory data based on the device id and displays the same in a widget.
 
