@@ -175,8 +175,6 @@ To Install the binary file in cockpit application run the following command in c
 
 ```npm i <binary file path> ``` 
 
-Example:
-
 ```cmd 
 npm i <binary file path>\gp-demo-widget-1.0.0.tgz
  ``` 
