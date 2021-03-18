@@ -362,23 +362,11 @@ Update package.json start script
         "runtime": "gulp --gulpfile ./runtime/gulpfile.js"
   }
 
-2. Install the following libararies(as dev dependencies)
+2. Install the following libararies(as dev dependencies) by executing below command.
 
-  npm i gulp-inject-string@1.1.2
-  npm i ng-packagr@9.1.1
-  npm i css-loader@3.5.3
-  npm i del@5.1.0
-  npm i delay@4.3.0
-  npm i fs-extra@9.0.0
-  npm i gulp@4.0.2
-  npm i gulp-filter@6.0.0
-  npm i gulp-replace@1.0.0
-  npm i gulp-zip@5.0.1
-  npm i url-loader@4.1.0
-  npm i webpack@4.43.0
-  npm i webpack-cli@3.3.11
-  npm i webpack-external-import@2.2.3
-
+```
+npm i gulp-inject-string@1.1.2 ng-packagr@9.1.1 css-loader@3.5.3 del@5.1.0 delay@4.3.0 fs-extra@9.0.0 gulp@4.0.2 gulp-filter@6.0.0 gulp-replace@1.0.0 gulp-zip@5.0.1 url-loader@4.1.0 webpack@4.43.0 webpack-cli@3.3.11 webpack-external-import@2.2.3 --save-dev
+```
 3. Copy the runtime folder from this project into your angular project.
 4. Edit the name and interleave values in the runtime/package.json to include the new contextPath:
 Important: Leave the -CustomWidget on the interleave option, and don't edit the dist/bundle-src/custom-widget.js part
