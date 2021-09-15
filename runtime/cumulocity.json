@@ -4,9 +4,14 @@
   "key": "demo-runtime-widget-application-key",
   "contentSecurityPolicy": "default-src 'self'",
   "icon": {
-    "class": "fa fa-delicious"
+    "class": "fa fa-diamond"
   },
   "manifest": {
-    "noAppSwitcher": true
+    "noAppSwitcher": true,
+    "requiredPlatformVersion": "1006.3.0 - 1010.0.8",
+    "version": "1.2.0",
+    "author": "Darpankumar Lalani - Software AG, Global Presales",
+    "description": "It fetches Inventory data based on the device id and display the same in a widget.",
+    "license": "Apache 2.0"
   }
 }

@@ -8,6 +8,7 @@ const execSync = require('child_process').execSync;
 const replace = require('gulp-replace');
 const path = require('path');
 const inject = require('gulp-inject-string');
+const jsonModify = require('gulp-json-modify');
 const pkgJson = require('./package.json');
 function clean() {
     return del(['dist']);
@@ -24,6 +25,31 @@ const compile = series(
 )
 
 const bundle = series(
+    function updateCumulocityJson() {
+        return src(['./cumulocity.json'])
+        .pipe(jsonModify(
+            {
+                key: 'manifest.version',
+                value: pkgJson.version
+            }))
+        .pipe(jsonModify(
+            {
+                key: 'manifest.author',
+                value: pkgJson.author
+            }))
+        .pipe(jsonModify(
+            {
+                key: 'manifest.description',
+                value: pkgJson.description
+            }))
+        .pipe(jsonModify(
+            {
+                key: 'manifest.license',
+                value: pkgJson.license
+            }
+          ))
+        .pipe(dest('./'));
+    },
     async function webpackBuild() { return execSync("npx webpack", {stdio: 'inherit'}) },
     function copyCumulocityJson() { return fs.copy('./cumulocity.json', './dist/widget/cumulocity.json')},
     function createZip() {
