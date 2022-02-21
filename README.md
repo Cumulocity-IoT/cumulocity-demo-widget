@@ -2,6 +2,13 @@
 
 This Demo Widget created using Angular Library and later deploy it in App Builder as cumulocity widget. It fetches Inventory data based on the device id and displays the same in a widget.
 
+### Please choose Demo Widget release based on Cumulocity/Application builder version:
+
+|APPLICATION BUILDER | CUMULOCITY | DEMO WIDGET         |
+|--------------------|------------|---------------------|
+| 1.3.x              | >= 1011.x.x| 2.x.x               |
+| 1.2.x              | 1010.x.x   | 1.x.x               | 
+
 ## Prerequisites:
    Angular CLI version 11.
     (for example: npm i @angular/cli@11.1.2 in your workspace or execute  npm i -g  @angular/cli@11.1.2 for global installation)
@@ -22,8 +29,8 @@ Execute below commands to setup New Angular Library Project for widget developem
        
   3. Install Cumulocity Libraries(Mandatory for widget development)
        ```cmd
-        npm install @c8y/client@1006.3.0
-        npm install @c8y/ngx-components@1006.3.0
+        npm install @c8y/client@1011.0.12
+        npm install @c8y/ngx-components@1011.0.12
        ```
   4. Add below script command in Project-Name/package.json file in script section to create shortcut for build and serve(Optional).
 
@@ -197,13 +204,13 @@ To Install the binary file in App Builder, run the following command.
 Example:
 
 ```cmd 
-npm i <binary file path>\gp-demo-widget-1.0.0.tgz
+npm i <binary file path>\gp-demo-widget-2.0.0.tgz
  ``` 
 
 After installation see that your App Builder  has following entry in `package.json `.
 
 ```cmd 
-"gp-demo-widget": "file:../commonLibrary/gp-demo-widget-0.11.0.tgz",
+"gp-demo-widget": "file:../commonLibrary/gp-demo-widget-2.0.0.tgz",
  ``` 
 
 ##### 2. Import Demo Widget Module
