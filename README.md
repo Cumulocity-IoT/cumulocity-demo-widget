@@ -136,9 +136,6 @@ Note: We need to initialize provider for each service and also import necessary 
     ```
     <lib-gp-demo-widget></lib-gp-demo-widget>
     ```
-      
-  - import your widget module in <Project Name>/src/app.module.ts for local development and testing.
-    for example:
 
   - Import your widget module in <Project Name>/src/app.module.ts and add the imported module under `@NgModule`.
     For example:
@@ -150,6 +147,19 @@ Note: We need to initialize provider for each service and also import necessary 
 
         imports: [
                   Library-Module-Name
+                 ]
+      })
+      ```
+  
+  - Import CoreModule.forRoot() in <Project Name>/src/app.module.ts and add the imported module under `@NgModule`.
+  
+      ```
+      import { CoreModule } from '@c8y/ngx-components';
+      
+      @NgModule({
+
+        imports: [
+                  CoreModule.forRoot()
                  ]
       })
       ```
