@@ -1,10 +1,10 @@
 # Demo Widget for Cumulocity Project [<img width="35" src="https://user-images.githubusercontent.com/67993842/97668428-f360cc80-1aa7-11eb-8801-da578bda4334.png"/>](https://github.com/SoftwareAG/cumulocity-demo-widget/releases/download/1.2.0/demo-runtime-widget-1.2.0.zip)
 
-This Demo Widget created using Anuglar Library and later deploy it in App Builder and Cockpit as cumulocity widget. It fetches Inventory data based on the device id and displays the same in a widget.
+This Demo Widget created using Angular Library and later deploy it in App Builder as cumulocity widget. It fetches Inventory data based on the device id and displays the same in a widget.
 
 ## Prerequisites:
-   Angular CLI version 8.
-    (for example: npm i @angular/cli@8.3.25 in your workspace or execute  npm i -g  @angular/cli@8.3.25 for global installation)
+   Angular CLI version 11.
+    (for example: npm i @angular/cli@11.1.2 in your workspace or execute  npm i -g  @angular/cli@11.1.2 for global installation)
 
 
 ## Create Angular Library Project
@@ -36,7 +36,6 @@ Execute below commands to setup New Angular Library Project for widget developem
         "serve": "ng build Library-Name && npm i dist/Library-Name && ng s"
         
         Note: Please replace "Library-Name" with your library name(e.g. gp-demo-widget)
-
 
 ## Configure Proxy for Cumulocity API calls
 Here are steps to setup proxy for Cumulocity API. This will help to develop and test widget locally without using cumulocity platform.
@@ -141,9 +140,19 @@ Note: We need to initialize provider for each service and also import necessary 
   - import your widget module in <Project Name>/src/app.module.ts for local development and testing.
     for example:
 
-    ```
-    import { Your-Library-Module } from './../../projects/Library-Name/src/lib/Library-Module-file-Name.ts';
-    ```
+  - Import your widget module in <Project Name>/src/app.module.ts and add the imported module under `@NgModule`.
+    For example:
+      
+      ```
+      import { Your-Library-Module } from 'projects/Library-Name/src/lib/Library-Module-Name.module';
+      
+      @NgModule({
+
+        imports: [
+                  Library-Module-Name
+                 ]
+      })
+      ```
 
 ## Local development server
 Run `npm run serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -165,105 +174,7 @@ Run `npm run serve` for a dev server. Navigate to `http://localhost:4200/`. The 
 
       iii) Copy the binary file **gp-demo-widget-0.x.x.tgz** the latest one from the dist folder and Place the binary file under any folder.
 
-2. This could be used in conjunction with the application builder/cockpit.
-
-## Deployment Of Demo widget In Cockpit Application
-
-##### 1. Install the binary file in cockpit application
-
-To Install the binary file in cockpit application run the following command in cockpit application
-
-```npm i <binary file path> ``` 
-
-```cmd 
-npm i <binary file path>\gp-demo-widget-1.0.0.tgz
- ``` 
-
-After installation see that your cockpit application has following entry in `package.json `.
-
-```cmd 
-"gp-demo-widget": "file:../commonLibrary/gp-demo-widget-1.0.0.tgz",
- ``` 
-
-##### 2. Import Demo Widget Module
-
-Import GpDemoWidgetModule in app.module.ts and also place the imported Module under `@NgModule`.
-
-```
-import { GpDemoWidgetModule } from 'gp-demo-widget';
-
-@NgModule({
-
-  imports: [
-
-    GpDemoWidgetModule    
-
-      ]
-
-  })
-```
-
-##### 3. Development server
-
-1. Using `c8ycli`
-
-Run `c8ycli server -u <hhtp://cumulocity_tenant>` for a dev server. Navigate to `http://localhost:9000/apps/<cockpit application name>/`. The app will automatically reload if you change any of the source files.
-
-2. Using `package.json Scripts`
-
-Update package.json start script 
-
-```
-"scripts": {
-
-  "start": "c8ycli server  -u <http://cumulocity_tenant>",
-
-  },
-```
-
-Run `npm run start ` for a dev server. Navigate to `http://localhost:9000/apps/<cockpit application name>/`. The app will automatically reload if you change any of the source files.
-
-##### 4. Build
-
-1. Using `c8ycli`
-
-Run `c8ycli build` 
-
-2. Using `package.json Scripts`
-
-Update package.json start script 
-
-```
-"scripts": {
-
-  "build": "c8ycli build",
-
-  },
-
-```
-Run `npm run build ` 
-
-##### 5. Deploy widget to the cockpit
-
-1. Using `c8ycli`
-
-Run `c8ycli deploy -u <http://cumulocity_tenant>` 
-
-2. Using `package.json Scripts`
-
-Update package.json start script 
-
-```
-"scripts": {
-
-  "deploy": "c8ycli deploy -u <http://cumulocity_tenant>",
-
-  },
-```
-
-Run `npm run deploy ` and provide specific cumulocity tenant URL and basic login credentials.
-
-On successful deployment In cumulocity, you can find your cockpit application under Application switcher.
+2. This could be used in conjunction with the application builder.
 
 ## Deployment Of Demo widget In App Builder
 
@@ -365,7 +276,7 @@ Update package.json start script
 2. Install the following libararies(as dev dependencies) by executing below command.
 
 ```
-npm i gulp-inject-string@1.1.2 ng-packagr@9.1.1 css-loader@3.5.3 del@5.1.0 delay@4.3.0 fs-extra@9.0.0 gulp@4.0.2 gulp-filter@6.0.0 gulp-replace@1.0.0 gulp-zip@5.0.1 url-loader@4.1.0 webpack@4.43.0 webpack-cli@3.3.11 webpack-external-import@2.2.3 --save-dev
+npm i gulp-inject-string@1.1.2 ng-packagr@11.0.0 css-loader@3.5.3 del@5.1.0 delay@4.3.0 fs-extra@9.0.0 gulp@4.0.2 gulp-filter@6.0.0 gulp-replace@1.0.0 gulp-zip@5.0.1 url-loader@4.1.0 webpack@4.43.0 webpack-cli@3.3.11 webpack-external-import@2.2.3 gulp-json-modify@1.0.2 --save-dev
 ```
 3. Copy the runtime folder from this project into your angular project.
 4. Edit the name and interleave values in the runtime/package.json to include the new contextPath:
@@ -427,7 +338,7 @@ Important: Leave the -CustomWidget on the interleave option, and don't edit the 
   npm run runtime
 ```
 
-9. After the build completes the /dist folder will contain a zip file, this is your deployable widget
+9. After the build completes the runtime/dist folder will contain a zip file, this is your deployable widget
 
 10. Use Application Builder to install your runtime widget. Download the Demo Runtime Widget [from here](https://github.com/SoftwareAG/cumulocity-demo-widget/releases/download/1.2.0/demo-runtime-widget-1.2.0.zip)
 
