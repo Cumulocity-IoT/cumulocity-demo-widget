@@ -4,7 +4,7 @@
     "dist\\bundle-src\\custom-widget.js": "demo-runtime-widget-CustomWidget",
     "dist/bundle-src/custom-widget.js": "demo-runtime-widget-CustomWidget"
   },
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "It fetches Inventory data based on the device id and display the same in a widget.",
   "author": "Darpankumar Lalani - Software AG, Global Presales",
   "license": "Apache 2.0"
