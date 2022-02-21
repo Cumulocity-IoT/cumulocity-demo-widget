@@ -189,7 +189,7 @@ Run `npm run serve` for a dev server. Navigate to `http://localhost:4200/`. The 
 
      ```npm run buildMinor ``` 
 
-      iii) Copy the binary file **gp-demo-widget-0.x.x.tgz** the latest one from the dist folder and Place the binary file under any folder.
+      iii) Copy the binary file **gp-demo-widget-2.x.x.tgz** the latest one from the dist folder and Place the binary file under any folder.
 
 2. This could be used in conjunction with the application builder.
 
