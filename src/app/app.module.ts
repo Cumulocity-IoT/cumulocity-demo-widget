@@ -20,8 +20,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {GpDemoWidgetModule} from '../../projects/gp-demo-widget/src/lib/gp-demo-widget.module';
+import { GpDemoWidgetModule } from '../../projects/gp-demo-widget/src/lib/gp-demo-widget.module';
 import { InventoryService, BasicAuth, Client } from '@c8y/client';
+import { CoreModule } from '@c8y/ngx-components';
+
 
 
 const auth = new BasicAuth({
@@ -39,7 +41,8 @@ const fetchClient = client.core;
   ],
   imports: [
     BrowserModule,
-    GpDemoWidgetModule
+    GpDemoWidgetModule,
+    CoreModule.forRoot()
   ],
   providers: [
     {
